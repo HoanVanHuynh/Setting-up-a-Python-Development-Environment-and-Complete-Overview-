@@ -16,4 +16,18 @@ if __name__=="__main__":
     filepath = "test.yml"
     data = yaml_loader(filepath)
     print(type(data))
-    print(data)        
+    print(data)   
+    items = data.get('items')   
+    for item_name, item_value in items.items():
+        print(item_name, item_value)
+
+    filepath2 = "test2.yml"
+    data2 = {
+        "items": {
+            "sword": 100, 
+            "axe": 80,
+            "boots": 40
+        }
+    }  
+    yaml_dump(filepath2, data2)
+    print(data2)
